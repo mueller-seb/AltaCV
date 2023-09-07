@@ -330,7 +330,7 @@
 \newcommand{\cveventvert}[5]{%
 	{\large\color{emphasis}#1\par}
 	\smallskip\normalsize
-	\ifstrequal{#2}{}{}{\textbf{\color{accent}#2}\par\smallskip}
+	\ifstrequal{#2}{}{}{\textbf{\color{accent}#2}}
 	\ifstrequal{#3}{}{}{\textbf{| #3}\par\smallskip}
 	\ifstrequal{#4}{}{}{%
 		{\small\makebox[0.5\linewidth][l]%
