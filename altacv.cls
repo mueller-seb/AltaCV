@@ -325,6 +325,26 @@
   \medskip\normalsize
 }
 
+% v1.1.4: fixes inconsistent font size
+% v1.7: adds accsupp ActualText for location and date markers
+\newcommand{\cveventvert}[5]{%
+	{\large\color{emphasis}#1\par}
+	\smallskip\normalsize
+	\ifstrequal{#2}{}{}{\textbf{\color{accent}#2}\par\smallskip}
+	\ifstrequal{#3}{}{}{\textbf{| #3}\par\smallskip}
+	\ifstrequal{#4}{}{}{%
+		{\small\makebox[0.5\linewidth][l]%
+			{\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+				~#4}%
+	}}%
+	\ifstrequal{#5}{}{}{%
+		{\small\makebox[0.5\linewidth][l]%
+			{\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+				~#5}%
+	}}\par
+	\medskip\normalsize
+}
+
 % v1.7: adds accsupp for the icon as well
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
