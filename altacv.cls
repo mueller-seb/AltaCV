@@ -275,6 +275,21 @@
   \endgroup\medskip
 }
 
+\newcommand{\makecvheaderR}[1]{%
+	\begingroup
+	\altacv@left@photos\hfill%
+	\begin{minipage}{\dimexpr\linewidth-#1}%
+		\raggedright%
+		{\namefont\color{name}\MakeUppercase{\@name}\par}
+		\medskip
+		{\taglinefont\color{tagline}\@tagline\par}
+		\medskip
+		{\personalinfofont\@personalinfo\par}
+	\end{minipage}\hfill%
+	\altacv@right@photos\par%
+	\endgroup\medskip
+}
+
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}
 
 \newcommand{\cvsection}[2][]{%
